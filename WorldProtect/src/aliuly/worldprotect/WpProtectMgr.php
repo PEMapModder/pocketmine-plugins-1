@@ -93,17 +93,17 @@ class WpProtectMgr extends BaseWp implements Listener {
 			case "unlock":
 				if (count($args)) return false;
 				$this->owner->unsetCfg($world,"protect");
-				$this->owner->getServer()->broadcastMessage(mc::_("[WP] %1% is now OPEN",$world));
+				$c->sendMessage(mc::_("[WP] %1% is now OPEN",$world));
 				return true;
 			case "lock":
 				if (count($args)) return false;
 				$this->owner->setCfg($world,"protect",$scmd);
-				$this->owner->getServer()->broadcastMessage(mc::_("[WP] %1% is now LOCKED",$world));
+				$c->sendMessage(mc::_("[WP] %1% is now LOCKED",$world));
 				return true;
 			case "protect":
 				if (count($args)) return false;
 				$this->owner->setCfg($world,"protect",$scmd);
-				$this->owner->getServer()->broadcastMessage(mc::_("[WP] %1% is now PROTECTED",$world));
+				$c->sendMessage(mc::_("[WP] %1% is now PROTECTED",$world));
 				return true;
 		}
 		return false;
