@@ -32,6 +32,11 @@ class Main extends BasicPlugin implements CommandExecutor {
 	const SPAM_DELAY = 5;
 
 	public function onEnable() {
+                if($this->getConfig()->get("enable") == false) {
+                   $this->setEnabled(false);
+                   return;
+                }
+
 		if (!is_dir($this->getDataFolder())) mkdir($this->getDataFolder());
 		mc::plugin_init($this,$this->getFile());
 		$cfg = $this->modConfig(__NAMESPACE__, [
