@@ -36,6 +36,7 @@ class Main extends BasicPlugin implements CommandExecutor {
 		mc::plugin_init($this,$this->getFile());
 		$cfg = $this->modConfig(__NAMESPACE__, [
 			"max-players" => [ "MaxPlayerMgr", false ],
+                        "enable" => false,
 			"protect" => [ "WpProtectMgr", true ],
 			"border" => [ "WpBordersMgr", true ],
 			"pvp" => [ "WpPvpMgr", true ],
